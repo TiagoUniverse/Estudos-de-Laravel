@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CdController;
+use App\Http\Controllers\celularController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\UsuariosController;
@@ -24,3 +25,5 @@ Route::get('/', function () {
 Route::get('/login', [UserController::class,'login']);
 
 Route::get('/cd', [CdController::class, 'index']);
+
+Route::get('/celular', [celularController::class, 'inicio']);
