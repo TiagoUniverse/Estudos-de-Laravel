@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\UsuariosController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +21,6 @@ Route::get('/', function () {
 });
  
 
-Route::get('/teste/{teste}', function($teste){
-    echo $teste;
-});
+// Route::get('/usuarios', [App\Http\Controllers\UsuariosController::class,'index'] );
+
+Route::get('/login', [UserController::class,'login']);
