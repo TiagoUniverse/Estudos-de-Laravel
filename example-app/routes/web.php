@@ -27,3 +27,5 @@ Route::get('/login', [UserController::class,'login']);
 Route::get('/cd', [CdController::class, 'index']);
 
 Route::get('/celular', [celularController::class, 'inicio']);
+
+Route::get('/usuario', [UserController::class, 'index']);

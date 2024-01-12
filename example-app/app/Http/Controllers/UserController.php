@@ -11,4 +11,9 @@ class UserController extends Controller
     {
         echo "oieee de tiago";
     }
+    
+    public function index()
+    {
+       return view('usuarios', ['texto' => 'Oieee' ]);
+    }
 }
