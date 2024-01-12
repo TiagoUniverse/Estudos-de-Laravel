@@ -14,6 +14,6 @@ class UserController extends Controller
     
     public function index()
     {
-       return view('usuarios', ['texto' => 'Oieee' ]);
+       return view('usuarios', ['texto' => 'Oieee com blade' ]);
     }
 }
