@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class CdController extends Controller
 {
-    public function login()
+    public function index()
     {
-        echo "oieee de tiago";
+        echo "Com sucesso!";
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CdController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\UsuariosController;
@@ -20,7 +21,6 @@ Route::get('/', function () {
     return view('welcome');
 });
  
-
-// Route::get('/usuarios', [App\Http\Controllers\UsuariosController::class,'index'] );
-
 Route::get('/login', [UserController::class,'login']);
+
+Route::get('/cd', [CdController::class, 'index']);
