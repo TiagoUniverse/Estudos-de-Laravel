@@ -14,6 +14,11 @@ class UserController extends Controller
     
     public function index()
     {
-       return view('usuarios', ['texto' => 'Oieee com blade' ]);
+       return view('usuarios', [
+        'texto' => 'Bem vindo a lista de usuarios' ,
+        'checagem' => false,
+        'usuarios' => ['usuario1', 'usuario2', 'usuario3', 'usuario4']
+        
+    ]);
     }
 }
