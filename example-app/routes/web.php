@@ -1,11 +1,7 @@
 <?php
 
-use App\Http\Controllers\CdController;
-use App\Http\Controllers\celularController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\UsuariosController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
- 
-Route::get('/login', [UserController::class,'login']);
 
-Route::get('/cd', [CdController::class, 'index']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/celular', [celularController::class, 'inicio']);
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-Route::get('/usuario', [UserController::class, 'index']);
+require __DIR__.'/auth.php';
