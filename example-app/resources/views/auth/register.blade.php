@@ -1,4 +1,7 @@
 <x-guest-layout>
+
+    <a href="{{ route('login') }}">Voltar</a>
+
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
