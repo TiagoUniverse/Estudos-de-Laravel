@@ -20,6 +20,11 @@
                     {{ __("Cadastro de Cliente") }}
 
 
+                @if(Session::has('mensagem_sucesso'))
+                    <div  class="alert alert-success" role="alert"> {{ Session::get('mensagem_sucesso') }}  </div>
+                @endif
+
+
                     {!! Form::open(['url' => 'clientes/salvar']) !!}
 
                     {!! Form::label('nome', 'nome') !!}

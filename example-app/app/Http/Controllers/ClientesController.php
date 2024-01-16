@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
+use Redirect;
 
 class ClientesController extends Controller
 {
@@ -21,10 +22,6 @@ class ClientesController extends Controller
 
     public function salvar(Request $request)
     {
-
-        // echo $request['endereco'];
-        // echo $request->all();
-
         $cliente = new Cliente();
 
         $cliente = $cliente->create([
@@ -33,7 +30,9 @@ class ClientesController extends Controller
             'numero' => $request['numero']
         ]);
 
-        return $cliente;
+        \Session::flash('mensagem_sucesso', 'Cliente cadastrado com sucesso!');
+
+        return Redirect::to('clientes/novo');
 
     }
 }
