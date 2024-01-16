@@ -24,8 +24,9 @@ Route::get('/', function () {
 })->middleware(['auth', 'verified'])->name('inicio');
 
 
-Route::get('/clientes' , [ClientesController::class, 'index'])->name('clientes');;
-Route::get('/clientes/novo' , [ClientesController::class, 'novo'])->name('novoCliente');;
+Route::get('clientes' , [ClientesController::class, 'index'])->name('clientes');;
+Route::get('clientes/novo' , [ClientesController::class, 'novo'])->name('novoCliente');;
+Route::post('clientes/salvar' , [ClientesController::class, 'salvar'])->name('salvarCliente');;
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -15,13 +15,23 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
+
+
                     {{ __("Cadastro de Cliente") }}
-                    
-
-                    {!! Form::open() !!}
 
 
-                    {!! Form::input('text', 'nome', '', ['class' => 'form-control', 'autofocus']) !!}
+                    {!! Form::open(['url' => 'clientes/salvar']) !!}
+
+                    {!! Form::label('nome', 'nome') !!}
+                    {!! Form::input('text', 'nome', '', ['class' => 'form-control', 'autofocus' , 'placeholder' => 'Nome']) !!}
+
+                    {!! Form::label('endereco', 'Endereço') !!}
+                    {!! Form::input('text', 'endereco', '', ['class' => 'form-control', '' , 'placeholder' => 'Endereço']) !!}
+
+                    {!! Form::label('numero', 'Número') !!}
+                    {!! Form::input('text', 'numero', '', ['class' => 'form-control', '' , 'placeholder' => 'Número']) !!}
+
+                    {!! Form::submit('Salvar', ['class' => 'btn btn-primary bg-primary']) !!}
 
                     {!! Form::close() !!}
 
