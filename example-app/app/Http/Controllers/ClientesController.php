@@ -11,4 +11,9 @@ class ClientesController extends Controller
     {
         return view('clientes.lista');
     }
+    
+    public function novo()
+    {
+        return view('clientes.formulario');
+    }
 }

@@ -25,6 +25,7 @@ Route::get('/', function () {
 
 
 Route::get('/clientes' , [ClientesController::class, 'index'])->name('clientes');;
+Route::get('/clientes/novo' , [ClientesController::class, 'novo'])->name('novoCliente');;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
