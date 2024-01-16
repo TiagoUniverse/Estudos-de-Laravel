@@ -41,6 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::get('clientes/{cliente}/editar', [ClientesController::class, 'editar'])->name('editarCliente');
     Route::post('clientes/salvar', [ClientesController::class, 'salvar'])->name('salvarCliente');
     Route::patch('clientes/{cliente}', [ClientesController::class, 'atualizar'])->name('atualizarCliente');
+    Route::delete('clientes/{cliente}', [ClientesController::class, 'deletar'])->name('deletarCliente');
 });
 
 

@@ -56,4 +56,15 @@ class ClientesController extends Controller
 
         return Redirect::to('clientes/' . $cliente->id . '/editar');
     }
+
+    public function deletar($id)
+    {
+        $cliente = Cliente::findOrFail($id);
+
+        $cliente->delete();
+
+        \Session::flash('mensagem_sucesso', 'Cliente deletado com sucesso!');
+
+        return Redirect::to('clientes');
+    }
 }
