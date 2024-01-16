@@ -40,6 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::get('clientes/novo', [ClientesController::class, 'novo'])->name('novoCliente');
     Route::get('clientes/{cliente}/editar', [ClientesController::class, 'editar'])->name('editarCliente');
     Route::post('clientes/salvar', [ClientesController::class, 'salvar'])->name('salvarCliente');
+    Route::patch('clientes/{cliente}', [ClientesController::class, 'atualizar'])->name('atualizarCliente');
 });
 
 

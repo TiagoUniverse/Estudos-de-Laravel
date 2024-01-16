@@ -20,22 +20,19 @@
 
 
                      @if(Request::is('*/editar'))
-                     {{'Editando'}}
+                        {!! Form::model($cliente, ['method' => 'PATCH' , 'url' => 'clientes/'.$cliente->id]) !!}
                      @else
-                     {{'Incluindo'}}
+                     {!! Form::open(['url' => 'clientes/salvar']) !!}
                      @endif
 
-
-                     {!! Form::open(['url' => 'clientes/salvar']) !!}
-
-                     {!! Form::label('nome', 'nome') !!}
-                     {!! Form::input('text', 'nome', '', ['class' => 'form-control', 'autofocus' , 'placeholder' => 'Nome']) !!}
+                     {!! Form::label('ome', 'Nome') !!}
+                     {!! Form::input('text', 'nome', null, ['class' => 'form-control', 'autofocus' , 'placeholder' => 'Nome']) !!}
 
                      {!! Form::label('endereco', 'Endereço') !!}
-                     {!! Form::input('text', 'endereco', '', ['class' => 'form-control', '' , 'placeholder' => 'Endereço']) !!}
+                     {!! Form::input('text', 'endereco', null, ['class' => 'form-control', '' , 'placeholder' => 'Endereço']) !!}
 
                      {!! Form::label('numero', 'Número') !!}
-                     {!! Form::input('text', 'numero', '', ['class' => 'form-control', '' , 'placeholder' => 'Número']) !!}
+                     {!! Form::input('text', 'numero', null, ['class' => 'form-control', '' , 'placeholder' => 'Número']) !!}
 
                      {!! Form::submit('Salvar', ['class' => 'btn btn-primary bg-primary']) !!}
 
