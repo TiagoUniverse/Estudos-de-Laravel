@@ -3,7 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Clientes') }}
         </h2>
-        <a href="{{route('novoCliente')}}" >Novo cliente</a>
+        <a class="text-primary" href="{{route('novoCliente')}}">Novo cliente</a>
     </x-slot>
 
     <div class="py-12">
@@ -11,9 +11,30 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ __("Listagem de clientes") }}
+                    <br>
+
+                    <table class="table">
+                        <th>Nome</th>
+                        <th>Endereço</th>
+                        <th>Número</th>
+                        <th>Ações</th>
+                        <tbody>
+                            @foreach($clientes as $cliente)
+                            <tr>
+                                <td>{{ $cliente->nome }}</td>
+                                <td>{{ $cliente->endereco }}</td>
+                                <td>{{ $cliente->numero }}</td>
+                                <td>
+                                    <a href="/clientes/{{ $cliente->id}}/editar " class="btn btn-secondary" >Editar</a>
+                                    <a href="" class="btn btn-secondary">Excluir</a>
+                                </td>
+                            </tr>
+                            @endforeach
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 </x-app-layout>
- 
