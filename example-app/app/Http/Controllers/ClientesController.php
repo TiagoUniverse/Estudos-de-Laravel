@@ -43,7 +43,7 @@ class ClientesController extends Controller
     {
         $cliente = Cliente::findOrFail($id);
 
-        return view('clientes.formulario');
+        return view('clientes.formulario' , ['cliente' => $cliente]);
     }
 
 
